@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+  padding: 0;
+  font-family: Lato;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100lvh;
+  background-color: #9e6ac5;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: white;
+}
+
+.todo {
+  list-style: none;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+form {
+    display: flex;
+}
+
+input[type="text"] {
+  padding: 1rem;
+  outline: none;
+  border: none;
+  border-radius: .2rem;
+  width: 20rem;
+}
+
+input[type="text"]::placeholder {
+    font-size: 1.2rem;
+}
+
+input[type="submit"], .remove {
+  padding: 0.2rem 0.5rem;
+  background: #720e9e;
+  border: 2px solid #720e9e;
+  color: white;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+
+input[type="submit"] {
+    padding: .5rem 1.75rem;
+    font-size: 1.2rem;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: black;
+}
+
