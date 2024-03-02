@@ -73,13 +73,13 @@ todoList.addEventListener("click", function (e) {
     let targetId = e.target.parentElement.dataset.id;
     for (let i = 0; i < storedTodos.length; i++) {
       let todo = storedTodos[i];
-      if (todo.id == targetId) storedTodos.splice(i, 1);
+      if (String(todo.id) === targetId) storedTodos.splice(i, 1);
     }
   } else if (e.target.tagName === "LI") {
     const targetId = e.target.dataset.id;
     e.target.classList.toggle("completed");
     for (const todo of storedTodos) {
-      if (todo.id == targetId) todo.isCompleted = !todo.isCompleted;
+      if (String(todo.id) === targetId) todo.isCompleted = !todo.isCompleted;
     }
   }
   localStorage.todos = JSON.stringify(storedTodos);
