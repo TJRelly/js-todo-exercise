@@ -12,7 +12,7 @@ if (storedTodos.length) {
     let todo = storedTodos[i];
     // Create new li
     const newLi = document.createElement("li");
-    newLi.setAttribute("data-id", i);
+    newLi.setAttribute("data-id", String(i));
     newLi.classList.add("todo");
     newLi.innerText = todo.task;
     todoList.append(newLi);
@@ -24,7 +24,7 @@ if (storedTodos.length) {
     // Handle completed
     if(todo.isCompleted) newLi.classList.add("completed");
     // order id's in todo list
-    storedTodos[i] = {id: i, task: todo.task, isCompleted: todo.isCompleted}
+    storedTodos[i] = {id: String(i), task: todo.task, isCompleted: todo.isCompleted}
   }
 }
 
@@ -37,7 +37,7 @@ const addTodo = addBtn.addEventListener("click", function (e) {
   if (todoInput.value) {
     // Create new li
     const newLi = document.createElement("li");
-    newLi.setAttribute("data-id", storedTodos.length);
+    newLi.setAttribute("data-id", String(storedTodos.length));
     newLi.classList.add("todo");
     newLi.innerText = todoInput.value;
     todoList.append(newLi);
