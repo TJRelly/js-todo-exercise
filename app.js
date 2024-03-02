@@ -37,7 +37,15 @@ const addTodo = addBtn.addEventListener("click", function (e) {
   if (todoInput.value) {
     // Create new li
     const newLi = document.createElement("li");
-    newLi.setAttribute("data-id", String(storedTodos.length));
+
+    let hiID = storedTodos.length
+    for(const todo of storedTodos) {
+      if(todo.id > hiID) hiID = Number(todo.id)
+    }
+    
+    newLi.setAttribute("data-id", String(++hiID));
+    console.log(storedTodos)
+
     newLi.classList.add("todo");
     newLi.innerText = todoInput.value;
     todoList.append(newLi);
